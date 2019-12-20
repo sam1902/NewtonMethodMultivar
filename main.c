@@ -45,7 +45,7 @@ int main() {
                 while (fabs(v2d(f_dx(x0))) > get(CONV_EPS, 0)
                     || fabs(v2d(f_dy(x0))) > get(CONV_EPS, 1)){
                     // Résouds HX = b avec X = P^k+1, H la hessienne de f en x0, et b = (P^k).A - grad_f(P^k)
-                    // en inversant la hessienne pour établir X = A_inv . b = H_inv.(P^k).H - grad_f(P^k)
+                    // en inversant la hessienne pour établir X = H_inv . b = H_inv.(P^k).H - H_inv.grad_f(P^k)
                     // Ici, x0 est P^0 et est graduellement amélioré vers l'optimum.
                     /* Calc de la Hessienne */
                     const double _H[2][2] = {{v2d(f_dxdx(x0)), v2d(f_dxdy(x0))},
